@@ -4,30 +4,33 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const router = express.Router();
 
 router.post('/api/users/register', async (req, res) => {
-    const {username, email, password} = req.body;
+	const { username, email, password } = req.body;
 
-    const body = JSON.stringify({username, email, password});
+	const body = JSON.stringify({
+		username,
+		email,
+		password,
+	});
 
-    try{
-        const registerRes = await fetch(`${process.env.API_URL}/api/users/register`,{
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body,
-        });
-        
-        const data = await registerRes.json();
-        return res.status(registerRes.status).json(data);
+	try {
+		debugger;
+		const apiRes = await fetch(`${process.env.API_URL}/api/users/register`, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body,
+		});
 
-    } catch(err){
-        return res.status(500).json({
-            error: "Something went wrong when trying to register an account"
-        });
-    }
+		const data = await apiRes.json();
+
+		return res.status(apiRes.status).json(data);
+	} catch (err) {
+		return res.status(500).json({
+			error: 'Something went wrong when registering account',
+		});
+	}
 });
 
 module.exports = router;
-
-

@@ -2,16 +2,15 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 export const register = createAsyncThunk(
   'users/register',
-  async ({username, email, password}, thunkAPI) => {
+  async ({ username, email, password }, thunkAPI) => {
     const body = JSON.stringify({
-      username: username, 
-      email: email, 
-      password: password
+      username,
+      email,
+      password,
     });
   
-
   try {
-    const response = await fetch('/api/users/register',{
+    const response = await fetch('http://localhost:8000/api/users/register',{
       method: 'POST',
       headers:{
         Accept: 'application/json',
@@ -29,16 +28,15 @@ export const register = createAsyncThunk(
     }
 
   } catch (err) {
-    return thunkAPI.rejectWithValue(err.response.data);
+      return thunkAPI.rejectWithValue(err.response.data);
   }
-
 });
 
 const initialState = { 
   isAuthenticated: false,
   user: null,
   loading: false,	
-  registered: false,
+  registered: true,
 }
 
 const userSlice = createSlice({
@@ -47,7 +45,7 @@ const userSlice = createSlice({
   reducers: {
     resetRegistered: state => {
       state.registered = false;
-    }
+    },
   },
   extraReducers: builder =>{
     builder
@@ -60,9 +58,9 @@ const userSlice = createSlice({
       })
       .addCase(register.rejected, state =>{
         state.loading = false;
-      })
-  }
-})
+      });
+  },
+});
 
 export const { resetRegistered } = userSlice.actions
 export default userSlice.reducer
