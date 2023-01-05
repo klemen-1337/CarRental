@@ -24,7 +24,6 @@ const RegisterPage = () => {
 
 	const onSubmit = e => {
 		e.preventDefault();
-
 		dispatch(register({ username, email, password }));
 	};
 
