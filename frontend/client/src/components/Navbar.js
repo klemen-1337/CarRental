@@ -9,6 +9,11 @@ const Navbar = () => {
     const authLinks = (
         <>
             <li className='nav-item'>
+                <NavLink className='nav-link' to='/profile'>
+                    <img src="/profile-pic.png" height="30"/>
+                </NavLink>
+            </li>
+            <li className='nav-item'>
                 <NavLink className='nav-link' to='/dashboard'>
                     Dashboard
                 </NavLink>

@@ -1,12 +1,19 @@
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 import Layout from 'components/Layout';
+import { useState, useEffect } from 'react';
+import { fetchCars } from 'features/cars';
 
 const DashboardPage = () => {
-	const { isAuthenticated, user, loading } = useSelector(state => state.user);
-
-	if (!isAuthenticated && !loading && user === null)
-		return <Navigate to='/login' />;
+	
+	const [vehicles, setVehicles] = useState([]);
+	const { user, loading } = useSelector(state => state.user);
+	
+	useEffect(() => {
+	  const getCars = async () => {
+		setVehicles(await fetchCars());
+	  };
+	  getCars();
+	}, []);
 
 	return (
 		<Layout title='Auth Site | Dashboard' content='Dashboard page'>
@@ -16,16 +23,20 @@ const DashboardPage = () => {
 				</div>
 			) : (
 				<>
-					<h1 className='mb-5'>Dashboard</h1>
-					<p>User Details</p>
+					<h1 className='mb-5'>Vehicle List</h1>
 					<ul>
-						<li>Username: {user.username}</li>
-						<li>Email: {user.email}</li>
+						{vehicles.map(vehicle => (
+							<li key={vehicle.id}>
+							{vehicle.id} {vehicle.name} ({vehicle.alias})
+							</li>
+						))}
 					</ul>
 				</>
 			)}
 		</Layout>
 	);
+
+	
 };
 
 export default DashboardPage;
