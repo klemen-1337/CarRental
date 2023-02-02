@@ -1,0 +1,25 @@
+# Django project specific settings
+*.env
+*.sqlite3
+*.log
+
+# Pycache
+__pycache__/
+*.pyc
+
+# Migration files
+*/migrations/0*
+
+# Media files
+media/
+
+# Static files
+static/
+
+# virtual environment
+venv/
+.env/
+
+# IDE settings
+.idea/
+*.iml

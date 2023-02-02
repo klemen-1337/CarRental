@@ -6,14 +6,14 @@ import { fetchCars } from 'features/cars';
 const DashboardPage = () => {
 	
 	const [vehicles, setVehicles] = useState([]);
-	const { user, loading } = useSelector(state => state.user);
+	const { isAuthenticated, user, loading } = useSelector(state => state.user);
 	
 	useEffect(() => {
-	  const getCars = async () => {
-		setVehicles(await fetchCars());
-	  };
-	  getCars();
-	}, []);
+		if(isAuthenticated){
+			const getCars = async () => setVehicles(await fetchCars());
+			getCars();
+		}
+	}, [isAuthenticated]);
 
 	return (
 		<Layout title='Auth Site | Dashboard' content='Dashboard page'>

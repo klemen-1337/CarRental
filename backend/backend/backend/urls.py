@@ -9,7 +9,8 @@ urlpatterns = [
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
     path('api/users/', include('users.urls')),
+    
+    path('api/rest/', include('rest.urls')),
 
     path('admin/', admin.site.urls),
-    path('', include('rest.urls')),
  ]
