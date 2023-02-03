@@ -5,7 +5,6 @@ from .serializers import CarSerializer
 from rest_framework.response import Response
 from .models import Car
 
-
 class CarViewSet(APIView):
 
     def get(self, request):
@@ -14,15 +13,14 @@ class CarViewSet(APIView):
         return Response(serializer_class.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-
-        data = request.data
+        data = request.data["body"]
 
         serializer = CarSerializer(data=data)
 
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        car = serializer.create(serializer.data)
+        car = serializer.create(serializer.validated_data)
         car = CarSerializer(car)
 
         return Response(car.data, status=status.HTTP_201_CREATED)

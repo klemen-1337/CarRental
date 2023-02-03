@@ -6,8 +6,10 @@ class CarSerializer(serializers.ModelSerializer):
         model = Car
         fields = '__all__'
 
-    def create(self, data):
+    def validate(self, data):
+        return data
 
-        car = Car.objects.create(**data)
+    def create(self, validated_data):
+        car = Car.objects.create(**validated_data)
 
         return car

@@ -10,7 +10,7 @@ const Navbar = () => {
         <>
             <li className='nav-item'>
                 <NavLink className='nav-link' to='/profile'>
-                    <img src="/profile-pic.png" height="30"/>
+                    <img src="/profile-pic.png" height="30" alt="profile-pic"/>
                 </NavLink>
             </li>
             <li className='nav-item'>

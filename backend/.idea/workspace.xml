@@ -7,15 +7,15 @@
     <list default="true" id="0d2721f3-f28b-444a-ab3b-4b9f40fdec6a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/backend/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/rest/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/rest/migrations/0002_rename_hero_car.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/rest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/rest/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/rest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/rest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rest/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/users/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/migrations/0002_useraccount_groups_useraccount_is_staff_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/client/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/client/src/components/Navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/client/src/containers/DashboardPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/client/src/containers/DashboardPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/client/src/features/cars.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/client/src/features/cars.js" afterDir="false" />
     </list>
@@ -42,14 +42,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/klemen/Desktop/Klemen/Car Rental/app/CarRental/backend/backend/manage.py"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,12 +58,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
