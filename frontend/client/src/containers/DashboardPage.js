@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import Layout from 'components/Layout';
 import { useState, useEffect } from 'react';
-import { fetchCars, postCar } from 'features/cars';
+import { fetchCars, postCar, deleteCar } from 'features/cars';
 
 const DashboardPage = () => {
 	
@@ -34,6 +34,10 @@ const DashboardPage = () => {
 		postCar(formData, user);
 	};
 
+	const removeCar = (id) =>{
+		deleteCar(id);
+	}
+
 
 	return (
 		<Layout title='Auth Site | Dashboard' content='Dashboard page'>
@@ -52,8 +56,8 @@ const DashboardPage = () => {
 									<div className="card-body">
 										<h5 className="card-title">{vehicle.make} ({vehicle.model}) - {vehicle.year}</h5>
 										<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-										<a href="#" className="btn btn-primary me-2">Edit</a>
-										<a href="#" className="btn btn-danger">Delete</a>
+										<a href={"/car/details/" + vehicle.id} className="btn btn-primary me-2">View</a>
+										<button onclick={removeCar(vehicle.id)} className="btn btn-danger">Delete</button>
 									</div>
 								</div>
 							</span>

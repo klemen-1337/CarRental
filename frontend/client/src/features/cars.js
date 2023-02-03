@@ -29,3 +29,11 @@ export const postCar = async (car, user) => {
     console.log(error);
   });
 };
+
+
+export const deleteCar = async(id, user) =>{
+
+  console.log("Hello");
+}
+
+

@@ -1,11 +1,21 @@
 # views.py
 from rest_framework.views import APIView
 from rest_framework import status
-from .serializers import CarSerializer
+from .serializers import CarSerializer, CarDetailSerializer
 from rest_framework.response import Response
-from .models import Car
+from .models import Car, CarDetails
 
 class CarViewSet(APIView):
+
+    def get(self, request):
+        queryset = CarDetails.objects.all()
+        serializer_class = CarDetailSerializer(queryset, many=True)
+        return Response(serializer_class.data, status=status.HTTP_200_OK)
+    def post(self, request):
+        pass
+
+
+class MultipleCarViewSet(APIView):
 
     def get(self, request):
         queryset = Car.objects.all()
